@@ -30,7 +30,49 @@ void main() {
   //Imprimir los datos de un mapa
 
 print("""Los datos actuales del mapa son:
-$pokemon
-
+Pokemon = $pokemon
+Trainer = $trainer
+Pokemons = $pokemons
 """);
+  
+  print("*************************************************************************");
+  print("""
+  Acediendo a las propiedades del pokemon usando los braquets/corchetes []
+  :
+  ----------------------------------------------
+  Nombre = ${pokemon['Name']}
+  HP = ${pokemon['HP']}
+  Vivo = ${pokemon['isAliven']}
+  Sprites = ${pokemon['sprites']}
+  ----------------------------------------------
+  """);
+  
+  print("""
+   """);
+  //Reto 01: obtener el valor independiente de las imagenes de front y back del pokemon
+  
+  // Front: ${(pokemon['sprites'])[1]}
+  // Back: ${(pokemon['sprites'])[2]}
+  
+  //Dado que la solucion  ya esta obsoleta lo que queda es crear una nueva
+  // variable con el objeto y destructurar las imagenes para acceder a ella
+  
+
+  final tmp_sprites = pokemon['sprites'] as Map<int, String>;
+   
+   print("""
+   Nombre = ${pokemon['Name']}
+  HP = ${pokemon['HP']}
+  Vivo = ${pokemon['isAliven']}
+  Sprites = ${pokemon['sprites']}
+  ------------------------------------
+  Back: ${tmp_sprites[2]}
+  Front: ${tmp_sprites[1]}
+   
+   """);
+   
+;  
+ 
+  
+  
 }
