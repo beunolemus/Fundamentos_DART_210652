@@ -18,7 +18,7 @@ PROYECTO DE CLASE PARA LA UNIDAD 1 DE LA ASIGNATURA DE DESARROLLO MOVIL INTEGRAL
 |5|TIPOS DE DATOS DINAMICOS EN DART	|5|✅FINALIZADA|
 |6|MAPAS|6|✅FINALIZADA|
 |7|Listas, Iterables y conjuntos de Datos|9|✅FINALIZADA|
-|8|Funciones y PArametros|11|🌚Activa|
+|8|Funciones y Parametros|11|🌚Activa|
 
 
 
