@@ -3,7 +3,7 @@ void main() {
   final double totalCalList;
   //1. Llamado de una funcion sin parametros
   greetEveryone();
-  
+
   //2. LLAMADO DE UNA FUNCION QUE RETORNA VALORES
   //A)  SIN ALMACENAR EL VALOR DE UNA VARIABLE
   print("hoy es el dia numero: ${getDayNumber()} del mes.");
@@ -39,6 +39,7 @@ print(greetSomeoneTyped(true));
   print(greetHourOfDay("Lemus",9));
   //4.2 SOLO ENVIADO EL OBLIGATORIO
   print(greetHourOfDay("Julio", null));
+  print(greetHourOfDay("Bruno"));
 
   //5. FUNCIONES LAMBA - LAS FUNCIONES LAMBA, MEJOR CONOCIDAS COMO FUNCIONES ANONIMAS O FUNCIONES SIMPLEFICADAS, SE EJECUTAN DE MANERA SIMPLE Y NO FRECUENTE EN LA EJECUCUION DE UN PROGRAMA O UN SISTEMA
 
@@ -46,20 +47,28 @@ print(greetSomeoneTyped(true));
   double cantidadProducto = 5;
   double precioProducto = 125.50;
   double descuento = 2.5;
-  print("""
+  print("""-----------------------------------------------------------
   Costo del producto: ${precioProducto}
   Cantidad: ${cantidadProducto}
   Descuento: ${descuento}
   ----------------------------------------------------------------
   Costo del carrito de compras: ${calculaCosto(cantidadProducto, precioProducto, descuento)}
   """);
+//6. llamado de la funcion con parametros nombrados
+  print(infoCarListStatus(buyerName: "Chucho"));
 
+  //6.1 llamado de una funcion con los parametros en desorden posicional
+  print(infoCarListStatus(
+    status: "En espera de pago",
+    amountCarList: 2416.20,
+    buyerName: "Janeto"
+  ));
 }
 
 //FUNCIONES Y PARAMETROS 
-  
+
   //DECLARACION
-  
+
   //1. FUNCION SIN PARAMETROS
 void greetEveryone()
 
@@ -86,21 +95,29 @@ String greetSomeoneTyped(String personName)
 }
 
 // 4. FUNCIÓN CON PARÁMETROS OPCIONALES
-String greetHourOfDay(String personName, int? hora) //Puede ser opcional
+String greetHourOfDay(String personName, [int? hourDay]) //Puede ser opcional
 {
-  hora ??= DateTime.now().hour; // si es nulo entonces ..
-  print("Hora: ${hora}");
+  hourDay ??= DateTime.now().hour; // si es nulo entonces ..
+  print("Hora: ${hourDay}");
   String saludo;
 
-  if (hora >= 6 && hora < 12) {
+  if (hourDay >= 6 && hourDay < 12) {
     saludo = "Buenos Días";
-  } else if (hora >= 12 && hora < 18) {
+  } else if (hourDay >= 12 && hourDay < 18) {
     saludo = "Buenas Tardes";
   } else {
     saludo = "Buenas Noches";
   }
 
   return "$saludo, $personName";
+
   
 }
-
+String infoCarListStatus({
+  required String buyerName,
+  double amountCarList = 0.0,
+  String status = "Selección de productos",
+}) {
+  return "El carrito de compras de: $buyerName, tiene un total de: "
+      "\$${amountCarList} y actualmente está en estatus: $status";
+}
