@@ -15,22 +15,29 @@ void main() {
   print(scarletWitch.name);
   print(scarletWitch.power);
 
-  
+
   final xmen = Team(type: "Heroes", name:"X-Men");
   print(xmen);
   print(xmen.name);
   print(xmen.type);
+  print(xmen.toString());
 
-
-  final justiceLeague = Team(name: "La Liga de la  Justicia");
+  
+  final brotherhood = Team(name: "Brotherhood", type: "Villanos");
+  print("-----------------------------------");
+  print(brotherhood.name);
+  print(brotherhood.type);
+  print(brotherhood.toString());
+  
+  /*final justiceLeague = Team(name: "La Liga de la  Justicia");
   print(justiceLeague);
   print(justiceLeague.name);
-  print(justiceLeague.type);
+  print(justiceLeague.type);*/
 
   // Intenrtamos instanciar la clase con solo el valor tipo, que no lo permite por que la
   //propiedad de nombres es requerida
   //final hydra= Team(type: "Villanos");
-  
+
 }
 
 class Hero {
@@ -51,5 +58,10 @@ class Team
   String type;
   // El contructor de la clase simpre deb llevar el mismo nombre de la misma.
   Team({required this.name, this.type="No definido."});
+
   
+  @override
+  String toString(){
+    return 'Grupo: $name, Tipo: $type';
+  }
 }
