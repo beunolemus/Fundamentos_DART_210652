@@ -1,5 +1,5 @@
 void main() {
-  final mySquare = Square(side: 18); // Usamos 'side' en lugar de '_side'
+  final mySquare = Square(side: 10); // Usamos 'side' en lugar de '_side'
 
   print("""
 Lado del Cuadrado: ${mySquare.side}
